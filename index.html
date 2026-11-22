@@ -837,7 +837,7 @@
         <div class="w-14 h-14 rounded-2xl bg-emerald-600 text-white mx-auto flex items-center justify-center text-2xl font-bold">✓</div>
         <h4 class="font-serif text-2xl font-bold text-espresso-700 dark:text-cream-50">Sprint Slot Reserved!</h4>
         <p class="text-sm text-espresso-600 dark:text-cream-300">
-          Reference ID: <strong id="booking-ref" class="text-caramel-600 dark:text-caramel-300">#AV-8492</strong>. Our lead product architect has sent your Mutual NDA and calendar invite.
+          Reference ID: <strong id="booking-ref" class="text-caramel-600 dark:text-caramel-300">#LS-8492</strong>. Our lead product architect has sent your Mutual NDA and calendar invite.
         </p>
         <button onclick="closeBookingModal()" class="w-full min-h-[46px] rounded-xl bg-espresso-700 dark:bg-caramel-400 text-cream-50 dark:text-espresso-950 font-bold text-sm">
           Done
@@ -1037,7 +1037,7 @@
     }
     function submitBooking(e) {
       e.preventDefault();
-      const randId = '#AV-' + Math.floor(1000 + Math.random() * 9000);
+      const randId = '#LS-' + Math.floor(1000 + Math.random() * 9000);
       document.getElementById('booking-ref').textContent = randId;
       document.getElementById('booking-form-wrap').classList.add('hidden');
       document.getElementById('booking-success-wrap').classList.remove('hidden');
