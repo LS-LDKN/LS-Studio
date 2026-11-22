@@ -10,7 +10,7 @@
   <script>
     (function () {
       try {
-        const savedTheme = localStorage.getItem('ls_studio_theme');
+        const savedTheme = localStorage.getItem('apex_studio_theme');
         if (savedTheme === 'dark') {
           document.documentElement.classList.add('dark');
         } else {
@@ -147,4 +147,966 @@
         <!-- Theme Toggle Button -->
         <button
           onclick="toggleTheme()"
-          aria
+          aria-label="Toggle Cream and Dark Espresso Theme"
+          class="w-11 h-11 rounded-xl border border-cream-300 dark:border-espresso-700 bg-cream-50 dark:bg-espresso-900 text-espresso-700 dark:text-caramel-300 flex items-center justify-center hover:border-caramel-500 transition shadow-sm"
+          title="Switch Cream / Dark Espresso Mode"
+        >
+          <!-- Sun Icon (shown in dark mode) -->
+          <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+          </svg>
+          <!-- Moon Icon (shown in cream mode) -->
+          <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- MASTER MAIN ACTION BUTTON -->
+        <button
+          onclick="openCommandHub()"
+          class="h-11 px-3.5 sm:px-5 rounded-xl bg-espresso-700 hover:bg-espresso-800 dark:bg-caramel-400 dark:hover:bg-caramel-300 text-cream-50 dark:text-espresso-950 font-bold text-xs sm:text-sm flex items-center gap-2 shadow-md transition active:scale-[0.98]"
+        >
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
+            <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
+            <rect x="14" y="14" width="7" height="7" rx="1.5"></rect>
+            <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
+          </svg>
+          <span>Start &amp; Explore</span>
+          <kbd class="hidden md:inline-block text-[10px] font-semibold px-1.5 py-0.5 rounded bg-espresso-800/80 dark:bg-espresso-950/20 text-cream-200 dark:text-espresso-950 border border-espresso-600/50 dark:border-espresso-950/20">
+            ⌘K
+          </kbd>
+        </button>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="relative pt-10 pb-14 sm:pt-16 sm:pb-20 lg:pt-20 lg:pb-24 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        
+        <!-- Left Content -->
+        <div class="lg:col-span-7 space-y-6">
+          <!-- Top Pill -->
+          <div class="inline-flex flex-wrap items-center gap-2 px-3.5 py-1.5 rounded-full bg-cream-200 dark:bg-espresso-900 border border-cream-400 dark:border-espresso-700 text-xs sm:text-sm font-semibold text-espresso-700 dark:text-caramel-300">
+            <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+            <span>1-Week Free Trial (₹0) • Mutual NDA Protected</span>
+          </div>
+
+          <!-- Headline -->
+          <h1 class="font-serif text-3xl sm:text-5xl lg:text-[54px] font-bold tracking-tight text-espresso-700 dark:text-cream-50 leading-[1.15]">
+            Bring Your Startup Idea. <br class="hidden sm:inline" />
+            <span class="text-caramel-500 dark:text-caramel-300 italic">We Validate, Build &amp; Launch It.</span>
+          </h1>
+
+          <!-- Subtitle -->
+          <p class="text-base sm:text-lg text-espresso-600 dark:text-cream-300 max-w-2xl leading-relaxed">
+            Test our team risk-free with a <strong>7-Day Free Discovery &amp; Prototyping Sprint (₹0)</strong>. Get a confidential idea audit, market roadmap, and clickable wireframes before paying a single rupee for full MVP development.
+          </p>
+
+          <!-- Primary & Master CTA Row -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-1">
+            <button
+              onclick="openBookingModal('1-Week Free Trial (₹0)')"
+              class="min-h-[52px] px-6 py-3.5 rounded-xl bg-espresso-700 hover:bg-espresso-800 dark:bg-caramel-400 dark:hover:bg-caramel-300 text-cream-50 dark:text-espresso-950 font-bold text-sm sm:text-base shadow-lg transition flex items-center justify-center gap-2"
+            >
+              <span>Claim 1-Week Free Trial (₹0)</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </button>
+
+            <button
+              onclick="openCommandHub()"
+              class="min-h-[52px] px-6 py-3.5 rounded-xl bg-cream-50 hover:bg-cream-200 dark:bg-espresso-900 dark:hover:bg-espresso-800 text-espresso-700 dark:text-cream-100 border border-cream-400 dark:border-espresso-700 font-bold text-sm sm:text-base transition flex items-center justify-center gap-2"
+            >
+              <span>All Options &amp; Estimator</span>
+              <svg class="w-4 h-4 text-caramel-500 dark:text-caramel-300" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Micro Trust Indicators -->
+          <div class="pt-2 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs sm:text-sm font-medium text-espresso-600 dark:text-cream-300">
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-caramel-500 dark:text-caramel-300 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              No Credit Card Required
+            </span>
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-caramel-500 dark:text-caramel-300 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              100% IP Ownership Yours
+            </span>
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-caramel-500 dark:text-caramel-300 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Cash or Cash + Equity
+            </span>
+          </div>
+        </div>
+
+        <!-- Right Visual Card: 2-Stage Funnel Overview -->
+        <div class="lg:col-span-5">
+          <div class="bg-cream-50 dark:bg-espresso-900 rounded-3xl border border-cream-300 dark:border-espresso-700 p-5 sm:p-7 shadow-xl space-y-5">
+            <div class="flex items-center justify-between border-b border-cream-300 dark:border-espresso-800 pb-4">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-caramel-500 dark:text-caramel-300">Zero-Risk Model</span>
+                <h2 class="text-lg sm:text-xl font-bold text-espresso-700 dark:text-cream-50">How Your Startup Launches</h2>
+              </div>
+              <button onclick="openNdaModal()" class="text-xs font-bold px-3 py-1.5 rounded-lg bg-cream-200 dark:bg-espresso-800 text-espresso-700 dark:text-caramel-300 hover:bg-cream-300 transition">
+                View NDA
+              </button>
+            </div>
+
+            <!-- Stage 1 Box -->
+            <div class="p-4 rounded-2xl bg-cream-200/70 dark:bg-espresso-800/80 border border-caramel-500/30 space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-md bg-caramel-500 text-cream-50">
+                  Stage 01 • Week 1
+                </span>
+                <span class="text-sm font-extrabold text-espresso-700 dark:text-caramel-300">₹0 (100% Free)</span>
+              </div>
+              <h3 class="font-bold text-base text-espresso-700 dark:text-cream-50">Free Idea Discussion &amp; 7-Day Trial</h3>
+              <p class="text-xs sm:text-sm text-espresso-600 dark:text-cream-300 leading-relaxed">
+                Signed Mutual NDA, 45-min founder call, competitor validation, tech architecture &amp; initial clickable wireframes.
+              </p>
+            </div>
+
+            <!-- Stage 2 Box -->
+            <div class="p-4 rounded-2xl bg-cream-100 dark:bg-espresso-950/60 border border-cream-300 dark:border-espresso-700 space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-md bg-espresso-700 dark:bg-espresso-700 text-cream-50">
+                  Stage 02 • Weeks 2–10
+                </span>
+                <span class="text-xs sm:text-sm font-bold text-espresso-600 dark:text-cream-300">Milestone Paid</span>
+              </div>
+              <h3 class="font-bold text-base text-espresso-700 dark:text-cream-50">Full MVP Engineering &amp; Launch</h3>
+              <p class="text-xs sm:text-sm text-espresso-600 dark:text-cream-300 leading-relaxed">
+                Proceed only if you love Week 1 results. Production web/mobile app, payment gateway, admin panel &amp; full code handover.
+              </p>
+            </div>
+
+            <button
+              onclick="openBookingModal('Free 45-Min Idea Discussion')"
+              class="w-full min-h-[48px] rounded-xl bg-espresso-700 hover:bg-espresso-800 dark:bg-caramel-400 dark:hover:bg-caramel-300 text-cream-50 dark:text-espresso-950 font-bold text-sm transition"
+            >
+              Book Free 45-Min Idea Discussion →
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== LEGAL & TRUST STRIP ==================== -->
+  <section class="border-y border-cream-300 dark:border-espresso-800 bg-cream-200/60 dark:bg-espresso-900/50 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="flex items-start gap-3.5">
+          <div class="w-10 h-10 rounded-xl bg-cream-50 dark:bg-espresso-800 border border-cream-300 dark:border-espresso-700 flex items-center justify-center text-caramel-500 dark:text-caramel-300 shrink-0 font-bold">
+            01
+          </div>
+          <div>
+            <h3 class="font-bold text-sm text-espresso-700 dark:text-cream-50">Mutual NDA Before Call</h3>
+            <p class="text-xs text-espresso-600 dark:text-cream-300 mt-1">Your startup concept stays legally confidential from day one.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3.5">
+          <div class="w-10 h-10 rounded-xl bg-cream-50 dark:bg-espresso-800 border border-cream-300 dark:border-espresso-700 flex items-center justify-center text-caramel-500 dark:text-caramel-300 shrink-0 font-bold">
+            02
+          </div>
+          <div>
+            <h3 class="font-bold text-sm text-espresso-700 dark:text-cream-50">100% IP &amp; Code Ownership</h3>
+            <p class="text-xs text-espresso-600 dark:text-cream-300 mt-1">Every repository, design file, and patent right belongs to you.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3.5">
+          <div class="w-10 h-10 rounded-xl bg-cream-50 dark:bg-espresso-800 border border-cream-300 dark:border-espresso-700 flex items-center justify-center text-caramel-500 dark:text-caramel-300 shrink-0 font-bold">
+            03
+          </div>
+          <div>
+            <h3 class="font-bold text-sm text-espresso-700 dark:text-cream-50">40 / 30 / 30 Milestones</h3>
+            <p class="text-xs text-espresso-600 dark:text-cream-300 mt-1">Pay in transparent stages only as working demos are delivered.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3.5">
+          <div class="w-10 h-10 rounded-xl bg-cream-50 dark:bg-espresso-800 border border-cream-300 dark:border-espresso-700 flex items-center justify-center text-caramel-500 dark:text-caramel-300 shrink-0 font-bold">
+            04
+          </div>
+          <div>
+            <h3 class="font-bold text-sm text-espresso-700 dark:text-cream-50">Zero-Obligation Trial</h3>
+            <p class="text-xs text-espresso-600 dark:text-cream-300 mt-1">Walk away after 7 days with your research notes if not satisfied.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 1-WEEK FREE TRIAL EXPLORER ==================== -->
+  <section id="free-trial" class="py-16 sm:py-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto space-y-3 mb-10">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-caramel-500 dark:text-caramel-300">
+          7-Day Risk-Free Startup Sprint
+        </span>
+        <h2 class="font-serif text-2xl sm:text-4xl font-bold text-espresso-700 dark:text-cream-50">
+          What Happens in Your 1-Week Free Trial?
+        </h2>
+        <p class="text-sm sm:text-base text-espresso-600 dark:text-cream-300">
+          Tap each phase below to see exact deliverables you receive at <strong>₹0 cost</strong> before signing any paid development contract.
+        </p>
+      </div>
+
+      <!-- Day Tabs (Mobile Scroll/Grid Friendly) -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mb-6" role="tablist">
+        <button onclick="selectSprintTab(0)" id="sprint-tab-0" class="sprint-tab min-h-[48px] px-3 py-2.5 rounded-xl font-bold text-xs sm:text-sm border transition bg-espresso-700 text-cream-50 border-espresso-700 dark:bg-caramel-400 dark:text-espresso-950 dark:border-caramel-400">
+          Day 1: NDA &amp; Call
+        </button>
+        <button onclick="selectSprintTab(1)" id="sprint-tab-1" class="sprint-tab min-h-[48px] px-3 py-2.5 rounded-xl font-bold text-xs sm:text-sm border transition bg-cream-50 text-espresso-700 border-cream-300 dark:bg-espresso-900 dark:text-cream-200 dark:border-espresso-700">
+          Days 2–4: Audit
+        </button>
+        <button onclick="selectSprintTab(2)" id="sprint-tab-2" class="sprint-tab min-h-[48px] px-3 py-2.5 rounded-xl font-bold text-xs sm:text-sm border transition bg-cream-50 text-espresso-700 border-cream-300 dark:bg-espresso-900 dark:text-cream-200 dark:border-espresso-700">
+          Days 5–7: Prototype
+        </button>
+        <button onclick="selectSprintTab(3)" id="sprint-tab-3" class="sprint-tab min-h-[48px] px-3 py-2.5 rounded-xl font-bold text-xs sm:text-sm border transition bg-cream-50 text-espresso-700 border-cream-300 dark:bg-espresso-900 dark:text-cream-200 dark:border-espresso-700">
+          Week 2+: MVP Build
+        </button>
+      </div>
+
+      <!-- Tab Content Card -->
+      <div id="sprint-panel" class="bg-cream-50 dark:bg-espresso-900 rounded-3xl border border-cream-300 dark:border-espresso-700 p-6 sm:p-8 shadow-md">
+        <!-- Populated dynamically via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 2-STAGE WORKFLOW ==================== -->
+  <section id="workflow" class="py-16 sm:py-20 bg-cream-200/50 dark:bg-espresso-900/40 border-y border-cream-300 dark:border-espresso-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto space-y-3 mb-12">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-caramel-500 dark:text-caramel-300">Clear Funnel</span>
+        <h2 class="font-serif text-2xl sm:text-4xl font-bold text-espresso-700 dark:text-cream-50">
+          Free Idea Validation. Paid Execution.
+        </h2>
+        <p class="text-sm sm:text-base text-espresso-600 dark:text-cream-300">
+          No hidden retainers or vague hourly billing. Every founder follows our structured 4-step launch path.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-cream-50 dark:bg-espresso-900 p-6 rounded-2xl border border-cream-300 dark:border-espresso-700 space-y-3">
+          <span class="inline-block text-xs font-bold px-2.5 py-1 rounded-md bg-cream-200 dark:bg-espresso-800 text-caramel-600 dark:text-caramel-300">Step 01 • Free</span>
+          <h3 class="font-bold text-lg text-espresso-700 dark:text-cream-50">Confidential Idea Call</h3>
+          <p class="text-sm text-espresso-600 dark:text-cream-300 leading-relaxed">
+            Sign our Mutual NDA and pitch your problem, target audience, and business vision in a focused 45-minute session.
+          </p>
+        </div>
+
+        <div class="bg-cream-50 dark:bg-espresso-900 p-6 rounded-2xl border border-cream-300 dark:border-espresso-700 space-y-3">
+          <span class="inline-block text-xs font-bold px-2.5 py-1 rounded-md bg-cream-200 dark:bg-espresso-800 text-caramel-600 dark:text-caramel-300">Step 02 • Free Trial</span>
+          <h3 class="font-bold text-lg text-espresso-700 dark:text-cream-50">7-Day Blueprint Sprint</h3>
+          <p class="text-sm text-espresso-600 dark:text-cream-300 leading-relaxed">
+            Our product architects map core user flows, clickable Figma wireframes, and a fixed-price MVP quote in 7 days.
+          </p>
+        </div>
+
+        <div class="bg-cream-50 dark:bg-espresso-900 p-6 rounded-2xl border border-cream-300 dark:border-espresso-700 space-y-3">
+          <span class="inline-block text-xs font-bold px-2.5 py-1 rounded-md bg-espresso-700 text-cream-50 dark:bg-caramel-400 dark:text-espresso-950">Step 03 • Paid Build</span>
+          <h3 class="font-bold text-lg text-espresso-700 dark:text-cream-50">Agile MVP Engineering</h3>
+          <p class="text-sm text-espresso-600 dark:text-cream-300 leading-relaxed">
+            Weekly live staging demos with full-stack engineering, authentication, payments, and cloud deployment.
+          </p>
+        </div>
+
+        <div class="bg-cream-50 dark:bg-espresso-900 p-6 rounded-2xl border border-cream-300 dark:border-espresso-700 space-y-3">
+          <span class="inline-block text-xs font-bold px-2.5 py-1 rounded-md bg-espresso-700 text-cream-50 dark:bg-caramel-400 dark:text-espresso-950">Step 04 • Handover</span>
+          <h3 class="font-bold text-lg text-espresso-700 dark:text-cream-50">Launch &amp; 100% IP Transfer</h3>
+          <p class="text-sm text-espresso-600 dark:text-cream-300 leading-relaxed">
+            Go live to your first paying users with full source code ownership, documentation, and 30-day post-launch support.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== INTERACTIVE MVP COST ESTIMATOR ==================== -->
+  <section id="estimator" class="py-16 sm:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto space-y-3 mb-10">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-caramel-500 dark:text-caramel-300">Instant Quote Calculator</span>
+        <h2 class="font-serif text-2xl sm:text-4xl font-bold text-espresso-700 dark:text-cream-50">
+          Estimate Your MVP Budget &amp; Timeline
+        </h2>
+        <p class="text-sm sm:text-base text-espresso-600 dark:text-cream-300">
+          Configure your startup platform and features below. Your <strong>1-Week Free Trial (₹0)</strong> is automatically included.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-8 items-start">
+        <!-- Controls -->
+        <div class="lg:col-span-7 bg-cream-50 dark:bg-espresso-900 rounded-3xl border border-cream-300 dark:border-espresso-700 p-5 sm:p-7 space-y-6">
+          
+          <!-- Platform Selection -->
+          <div>
+            <label class="block text-sm font-bold text-espresso-700 dark:text-cream-50 mb-3">1. Select Target Platform</label>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+              <button type="button" onclick="setPlatform('web', 180000, 4)" id="plat-web" class="plat-btn min-h-[48px] p-3 rounded-xl border text-left transition bg-espresso-700 text-cream-50 border-espresso-700 dark:bg-caramel-400 dark:text-espresso-950 dark:border-caramel-400">
+                <span class="block text-sm font-bold">Web App / SaaS</span>
+                <span class="block text-xs opacity-80">₹1.8L base • 4 wks</span>
+              </button>
+              <button type="button" onclick="setPlatform('mobile', 240000, 6)" id="plat-mobile" class="plat-btn min-h-[48px] p-3 rounded-xl border text-left transition bg-cream-100 text-espresso-700 border-cream-300 dark:bg-espresso-800 dark:text-cream-100 dark:border-espresso-700">
+                <span class="block text-sm font-bold">iOS + Android App</span>
+                <span class="block text-xs opacity-80">₹2.4L base • 6 wks</span>
+              </button>
+              <button type="button" onclick="setPlatform('both', 360000, 8)" id="plat-both" class="plat-btn min-h-[48px] p-3 rounded-xl border text-left transition bg-cream-100 text-espresso-700 border-cream-300 dark:bg-espresso-800 dark:text-cream-100 dark:border-espresso-700">
+                <span class="block text-sm font-bold">Web + Mobile Suite</span>
+                <span class="block text-xs opacity-80">₹3.6L base • 8 wks</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Core Add-on Modules -->
+          <div>
+            <label class="block text-sm font-bold text-espresso-700 dark:text-cream-50 mb-3">2. Add Core Startup Modules</label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <label class="flex items-center justify-between p-3.5 rounded-xl border border-cream-300 dark:border-espresso-700 bg-cream-100/70 dark:bg-espresso-800/60 cursor-pointer min-h-[52px]">
+                <span class="flex items-center gap-2.5 text-sm font-semibold">
+                  <input type="checkbox" class="addon-check w-4 h-4 accent-caramel-500" data-cost="35000" data-weeks="1" onchange="calculateEstimate()" checked />
+                  <span>Razorpay / Stripe Payments</span>
+                </span>
+                <span class="text-xs font-bold text-caramel-600 dark:text-caramel-300">+₹35k</span>
+              </label>
+
+              <label class="flex items-center justify-between p-3.5 rounded-xl border border-cream-300 dark:border-espresso-700 bg-cream-100/70 dark:bg-espresso-800/60 cursor-pointer min-h-[52px]">
+                <span class="flex items-center gap-2.5 text-sm font-semibold">
+                  <input type="checkbox" class="addon-check w-4 h-4 accent-caramel-500" data-cost="45000" data-weeks="1" onchange="calculateEstimate()" checked />
+                  <span>Super Admin Dashboard</span>
+                </span>
+                <span class="text-xs font-bold text-caramel-600 dark:text-caramel-300">+₹45k</span>
+              </label>
+
+              <label class="flex items-center justify-between p-3.5 rounded-xl border border-cream-300 dark:border-espresso-700 bg-cream-100/70 dark:bg-espresso-800/60 cursor-pointer min-h-[52px]">
+                <span class="flex items-center gap-2.5 text-sm font-semibold">
+                  <input type="checkbox" class="addon-check w-4 h-4 accent-caramel-500" data-cost="65000" data-weeks="2" onchange="calculateEstimate()" />
+                  <span>AI Chatbot / LLM Workflow</span>
+                </span>
+                <span class="text-xs font-bold text-caramel-600 dark:text-caramel-300">+₹65k</span>
+              </label>
+
+              <label class="flex items-center justify-between p-3.5 rounded-xl border border-cream-300 dark:border-espresso-700 bg-cream-100/70 dark:bg-espresso-800/60 cursor-pointer min-h-[52px]">
+                <span class="flex items-center gap-2.5 text-sm font-semibold">
+                  <input type="checkbox" class="addon-check w-4 h-4 accent-caramel-500" data-cost="40000" data-weeks="1" onchange="calculateEstimate()" />
+                  <span>Brand Identity &amp; Pitch Deck</span>
+                </span>
+                <span class="text-xs font-bold text-caramel-600 dark:text-caramel-300">+₹40k</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Equity Hybrid Option inside Estimator -->
+          <div class="p-4 rounded-2xl bg-cream-200/80 dark:bg-espresso-800 border border-cream-400 dark:border-espresso-700 flex items-center justify-between gap-4">
+            <div>
+              <span class="font-bold text-sm text-espresso-700 dark:text-cream-50 block">Apply Cash + Equity Hybrid (-35% Cash)</span>
+              <span class="text-xs text-espresso-600 dark:text-cream-300">Lower upfront cash in exchange for 10%–20% startup equity.</span>
+            </div>
+            <input type="checkbox" id="est-equity-toggle" onchange="calculateEstimate()" class="w-5 h-5 accent-caramel-500 shrink-0 cursor-pointer" />
+          </div>
+        </div>
+
+        <!-- Live Result Summary Box -->
+        <div class="lg:col-span-5 bg-espresso-700 dark:bg-espresso-900 text-cream-50 rounded-3xl border border-espresso-600 dark:border-espresso-700 p-6 sm:p-8 shadow-xl space-y-6">
+          <div class="flex items-center justify-between border-b border-espresso-600 dark:border-espresso-800 pb-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-caramel-300">Estimated Build Summary</span>
+            <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/30">
+              Week 1 Free Included
+            </span>
+          </div>
+
+          <div class="space-y-4">
+            <div>
+              <span class="text-xs text-cream-300 block">Week 1 Discovery &amp; Prototype Sprint</span>
+              <span class="text-2xl font-extrabold text-caramel-300">₹0 (Free Trial)</span>
+            </div>
+
+            <div class="pt-2 border-t border-espresso-600 dark:border-espresso-800">
+              <span class="text-xs text-cream-300 block">Estimated Paid MVP Investment</span>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span id="est-price" class="text-3xl sm:text-4xl font-extrabold text-cream-50">₹2,60,000</span>
+                <span id="est-equity-tag" class="hidden text-xs font-bold text-caramel-300">+ 15% Equity</span>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between text-sm pt-2 border-t border-espresso-600 dark:border-espresso-800">
+              <span class="text-cream-300">Estimated Delivery Timeline:</span>
+              <span id="est-weeks" class="font-bold text-cream-50">1 Wk Free + 6 Wks Build</span>
+            </div>
+          </div>
+
+          <button
+            onclick="bookWithEstimate()"
+            class="w-full min-h-[52px] rounded-xl bg-caramel-400 hover:bg-caramel-300 text-espresso-950 font-extrabold text-sm sm:text-base transition shadow-lg"
+          >
+            Lock This Estimate &amp; Start Free Week →
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 4-TIER PRICING PACKAGES ==================== -->
+  <section id="pricing" class="py-16 sm:py-20 bg-cream-200/50 dark:bg-espresso-900/40 border-y border-cream-300 dark:border-espresso-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto space-y-4 mb-10">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-caramel-500 dark:text-caramel-300">Transparent Engagement Tiers</span>
+        <h2 class="font-serif text-2xl sm:text-4xl font-bold text-espresso-700 dark:text-cream-50">
+          Start Free. Scale With Predictable Milestones.
+        </h2>
+
+        <!-- Cash vs Hybrid Switch -->
+        <div class="inline-flex items-center p-1.5 rounded-2xl bg-cream-50 dark:bg-espresso-900 border border-cream-300 dark:border-espresso-700">
+          <button onclick="setPricingMode('cash')" id="mode-cash-btn" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition bg-espresso-700 text-cream-50 dark:bg-caramel-400 dark:text-espresso-950">
+            100% Cash (100% IP)
+          </button>
+          <button onclick="setPricingMode('hybrid')" id="mode-hybrid-btn" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition text-espresso-600 dark:text-cream-300">
+            Cash + Equity (-35%)
+          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Tier 0: 1-Week Free Trial -->
+        <div class="bg-cream-50 dark:bg-espresso-900 rounded-3xl border-2 border-caramel-500 p-6 flex flex-col justify-between shadow-lg relative">
+          <span class="absolute -top-3 left-6 px-3 py-0.5 rounded-full bg-caramel-500 text-cream-50 text-[11px] font-extrabold uppercase tracking-wider">
+            Start Here • Zero Risk
+          </span>
+          <div class="space-y-4">
+            <div>
+              <h3 class="font-bold text-lg text-espresso-700 dark:text-cream-50">1-Week Free Trial</h3>
+              <p class="text-xs text-espresso-600 dark:text-cream-300 mt-1">7-Day Validation &amp; Prototype Sprint</p>
+            </div>
+            <div class="text-3xl font-extrabold text-espresso-700 dark:text-caramel-300">
+              ₹0 <span class="text-xs font-medium text-espresso-500 dark:text-cream-400">/ 7 days</span>
+            </div>
+            <ul class="space-y-2.5 text-xs sm:text-sm text-espresso-600 dark:text-cream-300 pt-2 border-t border-cream-300 dark:border-espresso-800">
+              <li>✓ Signed Mutual NDA Protection</li>
+              <li>✓ 45-Min Founder Strategy Call</li>
+              <li>✓ Market &amp; Competitor Audit</li>
+              <li>✓ Initial Clickable Wireframes</li>
+            </ul>
+          </div>
+          <button onclick="openBookingModal('Tier 0: 1-Week Free Trial (₹0)')" class="mt-6 w-full min-h-[46px] rounded-xl bg-espresso-700 hover:bg-espresso-800 dark:bg-caramel-400 dark:hover:bg-caramel-300 text-cream-50 dark:text-espresso-950 font-bold text-sm transition">
+            Start Free 7-Day Trial
+          </button>
+        </div>
+
+        <!-- Tier 1: Blueprint & Prototype -->
+        <div class="bg-cream-50 dark:bg-espresso-900 rounded-3xl border border-cream-300 dark:border-espresso-700 p-6 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div>
+              <h3 class="font-bold text-lg text-espresso-700 dark:text-cream-50">Blueprint &amp; UI/UX</h3>
+              <p class="text-xs text-espresso-600 dark:text-cream-300 mt-1">Complete Investor-Ready Design</p>
+            </div>
+            <div class="text-3xl font-extrabold text-espresso-700 dark:text-cream-50" data-cash="₹45,000" data-hybrid="₹29,000">
+              ₹45,000
+            </div>
+            <ul class="space-y-2.5 text-xs sm:text-sm text-espresso-600 dark:text-cream-300 pt-2 border-t border-cream-300 dark:border-espresso-800">
+              <li>✓ Full High-Fidelity Figma UI/UX</li>
+              <li>✓ Technical PRD &amp; DB Schema</li>
+              <li>✓ Interactive Investor Demo</li>
+              <li>✓ 1–2 Weeks Delivery</li>
+            </ul>
+          </div>
+          <button onclick="openBookingModal('Tier 1: Blueprint & UI/UX')" class="mt-6 w-full min-h-[46px] rounded-xl border border-espresso-700 dark:border-caramel-400 text-espresso-700 dark:text-caramel-300 hover:bg-cream-200 dark:hover:bg-espresso-800 font-bold text-sm transition">
+            Book After Free Trial
+          </button>
+        </div>
+
+        <!-- Tier 2: Lean MVP Build -->
+        <div class="bg-cream-50 dark:bg-espresso-900 rounded-3xl border border-cream-300 dark:border-espresso-700 p-6 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div>
+              <h3 class="font-bold text-lg text-espresso-700 dark:text-cream-50">Lean MVP Build</h3>
+              <p class="text-xs text-espresso-600 dark:text-cream-300 mt-1">Launch-Ready Web or Mobile App</p>
+            </div>
+            <div class="text-3xl font-extrabold text-espresso-700 dark:text-cream-50" data-cash="₹2.2 Lakh" data-hybrid="₹1.45 Lakh + Eq">
+              ₹2.2 Lakh
+            </div>
+            <ul class="space-y-2.5 text-xs sm:text-sm text-espresso-600 dark:text-cream-300 pt-2 border-t border-cream-300 dark:border-espresso-800">
+              <li>✓ Core Product + Auth + Payments</li>
+              <li>✓ Basic Admin Control Panel</li>
+              <li>✓ Cloud Hosting &amp; CI/CD Setup</li>
+              <li>✓ 4–6 Weeks Delivery</li>
+            </ul>
+          </div>
+          <button onclick="openBookingModal('Tier 2: Lean MVP Build')" class="mt-6 w-full min-h-[46px] rounded-xl border border-espresso-700 dark:border-caramel-400 text-espresso-700 dark:text-caramel-300 hover:bg-cream-200 dark:hover:bg-espresso-800 font-bold text-sm transition">
+            Select Lean MVP
+          </button>
+        </div>
+
+        <!-- Tier 3: Full Scale Venture -->
+        <div class="bg-cream-50 dark:bg-espresso-900 rounded-3xl border border-cream-300 dark:border-espresso-700 p-6 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div>
+              <h3 class="font-bold text-lg text-espresso-700 dark:text-cream-50">Launch &amp; Scale</h3>
+              <p class="text-xs text-espresso-600 dark:text-cream-300 mt-1">Full Venture Studio Partnership</p>
+            </div>
+            <div class="text-3xl font-extrabold text-espresso-700 dark:text-cream-50" data-cash="₹4.8 Lakh+" data-hybrid="₹3.1 Lakh + Eq">
+              ₹4.8 Lakh+
+            </div>
+            <ul class="space-y-2.5 text-xs sm:text-sm text-espresso-600 dark:text-cream-300 pt-2 border-t border-cream-300 dark:border-espresso-800">
+              <li>✓ Web + iOS + Android Apps</li>
+              <li>✓ AI Workflows &amp; Analytics</li>
+              <li>✓ Branding + GTM Launch Kit</li>
+              <li>✓ 60 Days Priority Support</li>
+            </ul>
+          </div>
+          <button onclick="openBookingModal('Tier 3: Launch & Scale Venture')" class="mt-6 w-full min-h-[46px] rounded-xl border border-espresso-700 dark:border-caramel-400 text-espresso-700 dark:text-caramel-300 hover:bg-cream-200 dark:hover:bg-espresso-800 font-bold text-sm transition">
+            Select Full Scale
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FAQ ACCORDION ==================== -->
+  <section id="faq" class="py-16 sm:py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center space-y-3 mb-10">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-caramel-500 dark:text-caramel-300">Founder Questions</span>
+        <h2 class="font-serif text-2xl sm:text-4xl font-bold text-espresso-700 dark:text-cream-50">
+          Frequently Asked Questions
+        </h2>
+      </div>
+
+      <div class="space-y-3">
+        <div class="rounded-2xl border border-cream-300 dark:border-espresso-700 bg-cream-50 dark:bg-espresso-900 overflow-hidden">
+          <button onclick="toggleFaq(0)" class="w-full min-h-[56px] px-5 py-4 text-left flex items-center justify-between gap-4 font-bold text-sm sm:text-base text-espresso-700 dark:text-cream-50">
+            <span>How do I know my startup idea won't be copied?</span>
+            <span id="faq-icon-0" class="text-xl font-bold text-caramel-500">+</span>
+          </button>
+          <div id="faq-body-0" class="hidden px-5 pb-4 text-xs sm:text-sm text-espresso-600 dark:text-cream-300 leading-relaxed">
+            Before you share sensitive details, we sign a legally binding Mutual Non-Disclosure Agreement (NDA). Furthermore, our execution contract explicitly assigns 100% Intellectual Property (IP) ownership to you.
+          </div>
+        </div>
+
+        <div class="rounded-2xl border border-cream-300 dark:border-espresso-700 bg-cream-50 dark:bg-espresso-900 overflow-hidden">
+          <button onclick="toggleFaq(1)" class="w-full min-h-[56px] px-5 py-4 text-left flex items-center justify-between gap-4 font-bold text-sm sm:text-base text-espresso-700 dark:text-cream-50">
+            <span>What is the catch with the 1-Week Free Trial?</span>
+            <span id="faq-icon-1" class="text-xl font-bold text-caramel-500">+</span>
+          </button>
+          <div id="faq-body-1" class="hidden px-5 pb-4 text-xs sm:text-sm text-espresso-600 dark:text-cream-300 leading-relaxed">
+            There is zero catch. We invest 7 days upfront to validate your concept and build initial wireframes so you can experience our communication and product quality firsthand. If you choose not to proceed to paid MVP development, you owe ₹0.
+          </div>
+        </div>
+
+        <div class="rounded-2xl border border-cream-300 dark:border-espresso-700 bg-cream-50 dark:bg-espresso-900 overflow-hidden">
+          <button onclick="toggleFaq(2)" class="w-full min-h-[56px] px-5 py-4 text-left flex items-center justify-between gap-4 font-bold text-sm sm:text-base text-espresso-700 dark:text-cream-50">
+            <span>How does the Cash + Equity Hybrid model work?</span>
+            <span id="faq-icon-2" class="text-xl font-bold text-caramel-500">+</span>
+          </button>
+          <div id="faq-body-2" class="hidden px-5 pb-4 text-xs sm:text-sm text-espresso-600 dark:text-cream-300 leading-relaxed">
+            For high-potential startups with strong founder domain expertise, we reduce our development fee by 35% in exchange for 10% to 20% advisory/co-build equity, aligning our long-term incentives with your growth.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-espresso-700 dark:bg-espresso-900 text-cream-200 py-12 border-t border-espresso-600 dark:border-espresso-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="text-center sm:text-left">
+        <span class="font-serif font-bold text-xl text-cream-50 block">LS Studio</span>
+        <span class="text-xs text-cream-300 mt-1 block">1-Week Free Startup Validation • Paid MVP Engineering • 100% IP Ownership</span>
+      </div>
+      <div class="flex flex-wrap items-center justify-center gap-4 text-xs font-semibold">
+        <button onclick="openNdaModal()" class="hover:text-caramel-300 underline">Mutual NDA Policy</button>
+        <button onclick="openCommandHub()" class="hover:text-caramel-300 underline">Quick Action Menu</button>
+        <span class="text-cream-400">© 2026 LS Studio</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== MOBILE STICKY THUMB-FRIENDLY BOTTOM BAR ==================== -->
+  <div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-cream-50/95 dark:bg-espresso-900/95 backdrop-blur-md border-t border-cream-300 dark:border-espresso-700 px-3 pt-2.5 pb-safe shadow-2xl">
+    <div class="flex items-center gap-2">
+      <button
+        onclick="openBookingModal('1-Week Free Trial (₹0)')"
+        class="flex-1 min-h-[46px] px-3 rounded-xl bg-espresso-700 dark:bg-caramel-400 text-cream-50 dark:text-espresso-950 font-bold text-xs sm:text-sm shadow-sm active:scale-[0.98] transition"
+      >
+        Start 1-Week Free Trial (₹0)
+      </button>
+      <button
+        onclick="openCommandHub()"
+        aria-label="Open All Options Menu"
+        class="min-h-[46px] px-3.5 rounded-xl bg-cream-200 dark:bg-espresso-800 border border-cream-400 dark:border-espresso-700 text-espresso-700 dark:text-cream-100 font-bold text-xs flex items-center gap-1.5"
+      >
+        <svg class="w-4 h-4 text-caramel-500 dark:text-caramel-300" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+        <span>Menu</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ==================== MASTER MAIN ACTION COMMAND HUB MODAL ==================== -->
+  <div id="command-modal" class="hidden fixed inset-0 z-50 bg-espresso-950/70 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-4" onclick="closeModalOnBackdrop(event, 'command-modal')">
+    <div class="bg-cream-50 dark:bg-espresso-900 w-full sm:max-w-lg rounded-t-3xl sm:rounded-3xl border border-cream-300 dark:border-espresso-700 shadow-2xl overflow-hidden animate-sheet max-h-[90vh] flex flex-col">
+      
+      <!-- Modal Header -->
+      <div class="px-5 py-4 border-b border-cream-300 dark:border-espresso-800 flex items-center justify-between">
+        <div>
+          <span class="text-[11px] font-extrabold uppercase tracking-wider text-caramel-500 dark:text-caramel-300">Master Quick Menu</span>
+          <h3 class="font-bold text-base sm:text-lg text-espresso-700 dark:text-cream-50">Where Would You Like to Start?</h3>
+        </div>
+        <button onclick="closeCommandHub()" class="w-9 h-9 rounded-xl bg-cream-200 dark:bg-espresso-800 text-espresso-700 dark:text-cream-100 flex items-center justify-center font-bold">✕</button>
+      </div>
+
+      <!-- 7 Unified Action Items -->
+      <div class="p-4 sm:p-5 space-y-2.5 overflow-y-auto">
+        <button onclick="closeCommandHub(); openBookingModal('1-Week Free Trial (₹0)')" class="w-full p-3.5 rounded-2xl bg-espresso-700 dark:bg-caramel-400 text-cream-50 dark:text-espresso-950 text-left flex items-center justify-between gap-3 hover:opacity-95 transition">
+          <div>
+            <span class="font-bold text-sm block">1. Start 1-Week Free Trial (₹0)</span>
+            <span class="text-xs opacity-85 block">7-day validation, NDA, market audit &amp; clickable wireframes</span>
+          </div>
+          <span class="font-bold text-sm">→</span>
+        </button>
+
+        <button onclick="closeCommandHub(); openBookingModal('Free 45-Min Idea Discussion')" class="w-full p-3.5 rounded-2xl bg-cream-100 dark:bg-espresso-800 border border-cream-300 dark:border-espresso-700 text-left flex items-center justify-between gap-3 hover:border-caramel-500 transition">
+          <div>
+            <span class="font-bold text-sm text-espresso-700 dark:text-cream-50 block">2. Book Free 45-Min Idea Discussion</span>
+            <span class="text-xs text-espresso-600 dark:text-cream-300 block">Confidential 1-on-1 session with our product architect</span>
+          </div>
+          <span class="text-caramel-500 font-bold">→</span>
+        </button>
+
+        <button onclick="closeCommandHub(); navigateTo('#estimator')" class="w-full p-3.5 rounded-2xl bg-cream-100 dark:bg-espresso-800 border border-cream-300 dark:border-espresso-700 text-left flex items-center justify-between gap-3 hover:border-caramel-500 transition">
+          <div>
+            <span class="font-bold text-sm text-espresso-700 dark:text-cream-50 block">3. Interactive MVP Cost Calculator</span>
+            <span class="text-xs text-espresso-600 dark:text-cream-300 block">Calculate instant INR budget &amp; delivery weeks</span>
+          </div>
+          <span class="text-caramel-500 font-bold">→</span>
+        </button>
+
+        <button onclick="closeCommandHub(); navigateTo('#pricing')" class="w-full p-3.5 rounded-2xl bg-cream-100 dark:bg-espresso-800 border border-cream-300 dark:border-espresso-700 text-left flex items-center justify-between gap-3 hover:border-caramel-500 transition">
+          <div>
+            <span class="font-bold text-sm text-espresso-700 dark:text-cream-50 block">4. Compare Cash vs. Equity Packages</span>
+            <span class="text-xs text-espresso-600 dark:text-cream-300 block">Blueprint, Lean MVP &amp; Full Scale venture tiers</span>
+          </div>
+          <span class="text-caramel-500 font-bold">→</span>
+        </button>
+
+        <button onclick="closeCommandHub(); openNdaModal()" class="w-full p-3.5 rounded-2xl bg-cream-100 dark:bg-espresso-800 border border-cream-300 dark:border-espresso-700 text-left flex items-center justify-between gap-3 hover:border-caramel-500 transition">
+          <div>
+            <span class="font-bold text-sm text-espresso-700 dark:text-cream-50 block">5. Preview Mutual NDA Agreement</span>
+            <span class="text-xs text-espresso-600 dark:text-cream-300 block">Read how we legally protect your startup concept</span>
+          </div>
+          <span class="text-caramel-500 font-bold">→</span>
+        </button>
+
+        <button onclick="closeCommandHub(); navigateTo('#free-trial')" class="w-full p-3.5 rounded-2xl bg-cream-100 dark:bg-espresso-800 border border-cream-300 dark:border-espresso-700 text-left flex items-center justify-between gap-3 hover:border-caramel-500 transition">
+          <div>
+            <span class="font-bold text-sm text-espresso-700 dark:text-cream-50 block">6. Explore Day 1–7 Sprint Breakdown</span>
+            <span class="text-xs text-espresso-600 dark:text-cream-300 block">See exact daily deliverables of your free trial week</span>
+          </div>
+          <span class="text-caramel-500 font-bold">→</span>
+        </button>
+
+        <button onclick="toggleTheme()" class="w-full p-3.5 rounded-2xl bg-cream-200 dark:bg-espresso-950 border border-cream-400 dark:border-espresso-700 text-left flex items-center justify-between gap-3">
+          <div>
+            <span class="font-bold text-sm text-espresso-700 dark:text-caramel-300 block">7. Switch Cream / Dark Espresso Theme</span>
+            <span class="text-xs text-espresso-600 dark:text-cream-300 block">Instant light cream &amp; dark espresso toggle</span>
+          </div>
+          <span class="text-xs font-bold px-2.5 py-1 rounded-lg bg-cream-50 dark:bg-espresso-800 text-espresso-700 dark:text-cream-100">Toggle</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== BOOKING & TRIAL ONBOARDING MODAL ==================== -->
+  <div id="booking-modal" class="hidden fixed inset-0 z-50 bg-espresso-950/70 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-4" onclick="closeModalOnBackdrop(event, 'booking-modal')">
+    <div class="bg-cream-50 dark:bg-espresso-900 w-full sm:max-w-lg rounded-t-3xl sm:rounded-3xl border border-cream-300 dark:border-espresso-700 shadow-2xl overflow-hidden animate-sheet max-h-[92vh] flex flex-col">
+      
+      <div class="px-5 py-4 border-b border-cream-300 dark:border-espresso-800 flex items-center justify-between">
+        <div>
+          <span class="text-[11px] font-extrabold uppercase tracking-wider text-caramel-500 dark:text-caramel-300">Confidential Kickoff</span>
+          <h3 class="font-bold text-base sm:text-lg text-espresso-700 dark:text-cream-50">Book Discovery &amp; 1-Week Free Trial</h3>
+        </div>
+        <button onclick="closeBookingModal()" class="w-9 h-9 rounded-xl bg-cream-200 dark:bg-espresso-800 text-espresso-700 dark:text-cream-100 flex items-center justify-center font-bold">✕</button>
+      </div>
+
+      <div id="booking-form-wrap" class="p-5 overflow-y-auto space-y-4">
+        <form onsubmit="submitBooking(event)" class="space-y-4">
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-espresso-600 dark:text-cream-300 mb-1.5">Selected Track</label>
+            <input type="text" id="booking-package" readonly class="w-full px-3.5 py-2.5 rounded-xl bg-cream-200 dark:bg-espresso-800 border border-cream-400 dark:border-espresso-700 font-bold text-espresso-700 dark:text-caramel-300" value="1-Week Free Trial (₹0)" />
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-bold text-espresso-700 dark:text-cream-200 mb-1">Your Name *</label>
+              <input type="text" id="founder-name" required placeholder="e.g., Aarav Sharma" class="w-full px-3.5 py-2.5 rounded-xl bg-cream-100 dark:bg-espresso-800 border border-cream-300 dark:border-espresso-700 text-espresso-700 dark:text-cream-50" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-espresso-700 dark:text-cream-200 mb-1">Work Email / WhatsApp *</label>
+              <input type="text" id="founder-contact" required placeholder="name@company.com" class="w-full px-3.5 py-2.5 rounded-xl bg-cream-100 dark:bg-espresso-800 border border-cream-300 dark:border-espresso-700 text-espresso-700 dark:text-cream-50" />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-espresso-700 dark:text-cream-200 mb-1">Brief Startup Idea (NDA Protected) *</label>
+            <textarea id="founder-idea" rows="3" required placeholder="Tell us what problem you are solving and your target users..." class="w-full px-3.5 py-2.5 rounded-xl bg-cream-100 dark:bg-espresso-800 border border-cream-300 dark:border-espresso-700 text-espresso-700 dark:text-cream-50"></textarea>
+          </div>
+
+          <label class="flex items-center gap-2.5 text-xs font-semibold text-espresso-700 dark:text-cream-200 cursor-pointer">
+            <input type="checkbox" checked class="w-4 h-4 accent-caramel-500" />
+            <span>Send signed Mutual NDA copy to my email before the call</span>
+          </label>
+
+          <button type="submit" class="w-full min-h-[50px] rounded-xl bg-espresso-700 hover:bg-espresso-800 dark:bg-caramel-400 dark:hover:bg-caramel-300 text-cream-50 dark:text-espresso-950 font-extrabold text-sm transition shadow-md">
+            Confirm Free Trial &amp; Discovery Call
+          </button>
+        </form>
+      </div>
+
+      <!-- Success State -->
+      <div id="booking-success-wrap" class="hidden p-6 text-center space-y-4">
+        <div class="w-14 h-14 rounded-2xl bg-emerald-600 text-white mx-auto flex items-center justify-center text-2xl font-bold">✓</div>
+        <h4 class="font-serif text-2xl font-bold text-espresso-700 dark:text-cream-50">Sprint Slot Reserved!</h4>
+        <p class="text-sm text-espresso-600 dark:text-cream-300">
+          Reference ID: <strong id="booking-ref" class="text-caramel-600 dark:text-caramel-300">#AV-8492</strong>. Our lead product architect has sent your Mutual NDA and calendar invite.
+        </p>
+        <button onclick="closeBookingModal()" class="w-full min-h-[46px] rounded-xl bg-espresso-700 dark:bg-caramel-400 text-cream-50 dark:text-espresso-950 font-bold text-sm">
+          Done
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MUTUAL NDA CONTRACT PREVIEW MODAL ==================== -->
+  <div id="nda-modal" class="hidden fixed inset-0 z-50 bg-espresso-950/70 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-4" onclick="closeModalOnBackdrop(event, 'nda-modal')">
+    <div class="bg-cream-50 dark:bg-espresso-900 w-full sm:max-w-xl rounded-t-3xl sm:rounded-3xl border border-cream-300 dark:border-espresso-700 shadow-2xl overflow-hidden animate-sheet max-h-[88vh] flex flex-col">
+      <div class="px-5 py-4 border-b border-cream-300 dark:border-espresso-800 flex items-center justify-between">
+        <h3 class="font-bold text-base sm:text-lg text-espresso-700 dark:text-cream-50">Mutual Non-Disclosure Agreement (Summary)</h3>
+        <button onclick="closeNdaModal()" class="w-9 h-9 rounded-xl bg-cream-200 dark:bg-espresso-800 text-espresso-700 dark:text-cream-100 flex items-center justify-center font-bold">✕</button>
+      </div>
+      <div class="p-5 overflow-y-auto space-y-3 text-xs sm:text-sm text-espresso-600 dark:text-cream-300 leading-relaxed">
+        <p><strong>1. Confidential Information:</strong> All business plans, product wireframes, technical concepts, and customer insights shared by Founder with <strong>LS Studio</strong> remain strictly confidential.</p>
+        <p><strong>2. Non-Use &amp; Non-Compete:</strong> ApexVentures Studio agrees never to replicate, commercialize, or disclose Founder's proprietary startup concept to any third party.</p>
+        <p><strong>3. 100% Intellectual Property Ownership:</strong> All deliverables, prototypes, and source code created during paid engagements transfer exclusively to Founder upon milestone completion.</p>
+      </div>
+      <div class="p-4 border-t border-cream-300 dark:border-espresso-800 flex justify-end gap-2">
+        <button onclick="closeNdaModal(); openBookingModal('1-Week Free Trial (With Mutual NDA)')" class="min-h-[44px] px-5 rounded-xl bg-espresso-700 dark:bg-caramel-400 text-cream-50 dark:text-espresso-950 font-bold text-xs sm:text-sm">
+          Accept &amp; Book Free Call
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== INTERACTIVE JAVASCRIPT ==================== -->
+  <script>
+    // 1. Theme Switcher (Cream Light <-> Dark Espresso)
+    function toggleTheme() {
+      const root = document.documentElement;
+      const isDark = root.classList.toggle('dark');
+      try {
+        localStorage.setItem('apex_studio_theme', isDark ? 'dark' : 'light');
+      } catch (e) {}
+    }
+
+    // 2. Master Command Hub Modal & Keyboard Shortcut (Ctrl/Cmd + K)
+    function openCommandHub() {
+      document.getElementById('command-modal').classList.remove('hidden');
+    }
+    function closeCommandHub() {
+      document.getElementById('command-modal').classList.add('hidden');
+    }
+    function navigateTo(selector) {
+      const el = document.querySelector(selector);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+    document.addEventListener('keydown', function (e) {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        const modal = document.getElementById('command-modal');
+        modal.classList.toggle('hidden');
+      } else if (e.key === 'Escape') {
+        closeCommandHub();
+        closeBookingModal();
+        closeNdaModal();
+      }
+    });
+
+    // 3. 7-Day Free Trial Sprint Interactive Tabs
+    const sprintData = [
+      {
+        badge: 'Day 1 • ₹0 Cost',
+        title: 'Mutual NDA Signing & 45-Minute Founder Discovery Call',
+        desc: 'We sign a binding Mutual NDA first so you can share openly. In a structured 45-minute call, we clarify your target users, monetization angle, and core MVP problem statement.',
+        deliverable: 'Signed Mutual NDA + Founder Discovery Brief'
+      },
+      {
+        badge: 'Days 2–4 • ₹0 Cost',
+        title: 'Market Feasibility, Competitor Audit & Scope PRD',
+        desc: 'Our product strategists analyze your top 3 competitors, define the leanest feature set needed to win early adopters, and map out your technical architecture.',
+        deliverable: '1-Page Product Roadmap & Feature Priority Matrix'
+      },
+      {
+        badge: 'Days 5–7 • ₹0 Cost',
+        title: 'Clickable Wireframes & Fixed-Price MVP Quote',
+        desc: 'We design key user screens in Figma so you can click through your product flow, alongside a transparent milestone quote and exact launch timeline.',
+        deliverable: 'Interactive Wireframe Link + Fixed Milestone Proposal'
+      },
+      {
+        badge: 'Week 2 Onwards • Paid Execution',
+        title: 'Full-Stack MVP Build & Weekly Staging Demos',
+        desc: 'Only if you love our Week 1 work, we kick off paid development with 40/30/30 milestones, weekly live demos, and 100% source code ownership.',
+        deliverable: 'Production Web/Mobile App + 100% IP Handover'
+      }
+    ];
+
+    function selectSprintTab(index) {
+      const tabs = document.querySelectorAll('.sprint-tab');
+      tabs.forEach((tab, i) => {
+        if (i === index) {
+          tab.className = 'sprint-tab min-h-[48px] px-3 py-2.5 rounded-xl font-bold text-xs sm:text-sm border transition bg-espresso-700 text-cream-50 border-espresso-700 dark:bg-caramel-400 dark:text-espresso-950 dark:border-caramel-400';
+        } else {
+          tab.className = 'sprint-tab min-h-[48px] px-3 py-2.5 rounded-xl font-bold text-xs sm:text-sm border transition bg-cream-50 text-espresso-700 border-cream-300 dark:bg-espresso-900 dark:text-cream-200 dark:border-espresso-700';
+        }
+      });
+
+      const item = sprintData[index];
+      document.getElementById('sprint-panel').innerHTML = `
+        <div class="space-y-4">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full bg-cream-200 dark:bg-espresso-800 text-caramel-600 dark:text-caramel-300">
+              ${item.badge}
+            </span>
+            <span class="text-xs font-bold text-espresso-500 dark:text-cream-400">Deliverable: ${item.deliverable}</span>
+          </div>
+          <h3 class="font-serif text-xl sm:text-2xl font-bold text-espresso-700 dark:text-cream-50">${item.title}</h3>
+          <p class="text-sm sm:text-base text-espresso-600 dark:text-cream-300 leading-relaxed">${item.desc}</p>
+          <div class="pt-2">
+            <button onclick="openBookingModal('1-Week Free Trial (₹0)')" class="min-h-[46px] px-5 py-2.5 rounded-xl bg-espresso-700 dark:bg-caramel-400 text-cream-50 dark:text-espresso-950 font-bold text-xs sm:text-sm">
+              Claim Your 1-Week Free Trial →
+            </button>
+          </div>
+        </div>
+      `;
+    }
+    selectSprintTab(0);
+
+    // 4. Real-Time MVP Cost Estimator
+    let baseCost = 180000;
+    let baseWeeks = 4;
+
+    function setPlatform(type, cost, weeks) {
+      baseCost = cost;
+      baseWeeks = weeks;
+      ['web', 'mobile', 'both'].forEach(p => {
+        const btn = document.getElementById('plat-' + p);
+        if (p === type) {
+          btn.className = 'plat-btn min-h-[48px] p-3 rounded-xl border text-left transition bg-espresso-700 text-cream-50 border-espresso-700 dark:bg-caramel-400 dark:text-espresso-950 dark:border-caramel-400';
+        } else {
+          btn.className = 'plat-btn min-h-[48px] p-3 rounded-xl border text-left transition bg-cream-100 text-espresso-700 border-cream-300 dark:bg-espresso-800 dark:text-cream-100 dark:border-espresso-700';
+        }
+      });
+      calculateEstimate();
+    }
+
+    function calculateEstimate() {
+      let totalCost = baseCost;
+      let totalWeeks = baseWeeks;
+
+      document.querySelectorAll('.addon-check:checked').forEach(chk => {
+        totalCost += parseInt(chk.dataset.cost, 10);
+        totalWeeks += parseInt(chk.dataset.weeks, 10);
+      });
+
+      const isHybrid = document.getElementById('est-equity-toggle').checked;
+      const equityTag = document.getElementById('est-equity-tag');
+
+      if (isHybrid) {
+        totalCost = Math.round(totalCost * 0.65);
+        equityTag.classList.remove('hidden');
+      } else {
+        equityTag.classList.add('hidden');
+      }
+
+      document.getElementById('est-price').textContent = '₹' + totalCost.toLocaleString('en-IN');
+      document.getElementById('est-weeks').textContent = `1 Wk Free + ${totalWeeks} Wks Build`;
+    }
+    calculateEstimate();
+
+    function bookWithEstimate() {
+      const price = document.getElementById('est-price').textContent;
+      const weeks = document.getElementById('est-weeks').textContent;
+      openBookingModal(`1-Week Free Trial + Est. MVP (${price} | ${weeks})`);
+    }
+
+    // 5. Cash vs. Hybrid Pricing Mode Switcher
+    function setPricingMode(mode) {
+      const cashBtn = document.getElementById('mode-cash-btn');
+      const hybridBtn = document.getElementById('mode-hybrid-btn');
+
+      if (mode === 'cash') {
+        cashBtn.className = 'px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition bg-espresso-700 text-cream-50 dark:bg-caramel-400 dark:text-espresso-950';
+        hybridBtn.className = 'px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition text-espresso-600 dark:text-cream-300';
+      } else {
+        hybridBtn.className = 'px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition bg-espresso-700 text-cream-50 dark:bg-caramel-400 dark:text-espresso-950';
+        cashBtn.className = 'px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition text-espresso-600 dark:text-cream-300';
+      }
+
+      document.querySelectorAll('[data-cash]').forEach(el => {
+        el.textContent = mode === 'cash' ? el.dataset.cash : el.dataset.hybrid;
+      });
+    }
+
+    // 6. FAQ Accordion
+    function toggleFaq(idx) {
+      const body = document.getElementById('faq-body-' + idx);
+      const icon = document.getElementById('faq-icon-' + idx);
+      const isHidden = body.classList.toggle('hidden');
+      icon.textContent = isHidden ? '+' : '−';
+    }
+
+    // 7. Booking & NDA Modals
+    function openBookingModal(packageName) {
+      document.getElementById('booking-package').value = packageName || '1-Week Free Trial (₹0)';
+      document.getElementById('booking-form-wrap').classList.remove('hidden');
+      document.getElementById('booking-success-wrap').classList.add('hidden');
+      document.getElementById('booking-modal').classList.remove('hidden');
+    }
+    function closeBookingModal() {
+      document.getElementById('booking-modal').classList.add('hidden');
+    }
+    function submitBooking(e) {
+      e.preventDefault();
+      const randId = '#AV-' + Math.floor(1000 + Math.random() * 9000);
+      document.getElementById('booking-ref').textContent = randId;
+      document.getElementById('booking-form-wrap').classList.add('hidden');
+      document.getElementById('booking-success-wrap').classList.remove('hidden');
+    }
+
+    function openNdaModal() {
+      document.getElementById('nda-modal').classList.remove('hidden');
+    }
+    function closeNdaModal() {
+      document.getElementById('nda-modal').classList.add('hidden');
+    }
+    function closeModalOnBackdrop(e, modalId) {
+      if (e.target.id === modalId) {
+        document.getElementById(modalId).classList.add('hidden');
+      }
+    }
+  </script>
+</body>
+</html>
